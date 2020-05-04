@@ -32,18 +32,18 @@ public class ArduinoWriter : ILog, IDisposable {
         }
     }
 
-    public void Dispose(){  
-        Dispose(true);  
-        GC.SuppressFinalize(this);  
-    } 
+    public void Dispose(){
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
 
-    protected virtual void Dispose(bool disposing){  
+    protected virtual void Dispose(bool disposing){
         if(!disposing)
             return;
         // Close our ports
         foreach(SerialPort port in ports)
             port.Close();
-    } 
+    }
 }
 
 
